@@ -34,24 +34,44 @@ public class Calendar {
 //		result.close();
 
 		// n번 반복하도록 프로그램 변경하기
+		String PROMPT ="cal>";
 		Scanner result = new Scanner(System.in);
 		Calendar cal = new Calendar();
-		
 		cal.printSampleCalendar();
 		
-		System.out.println("반복횟수를 입력하세요");
-		int repeat = result.nextInt();
-		
-		for (int i = 0; i < repeat; i++) {
+		//while loop
+		int month =1;
+		while(true) {
 			System.out.println("달을 입력하세요.");
-			int month = result.nextInt();
-			// System.out.printf("해당 달의 최대 일수는 %d일입니다", maxDays[month+1]);
+			System.out.print(PROMPT);
+			month = result.nextInt();
+			if(month ==-1) {
+				break;
+			}
+			if(month>12) {
+				continue;
+			}
 			System.out.printf("%d월은 %d일까지 있습니다.\n", month, cal.getMaxDaysOfMonth(month));
-
 		}
-
+		
 		System.out.println("출력이 완료되었습니다.");	
 		result.close();
+
+		//System.out.println("반복횟수를 입력하세요");
+		//int repeat = result.nextInt();
+		
+		
+		
+		
+		
+		//for loop 
+//		for (int i = 0; i < repeat; i++) {
+//			System.out.println("달을 입력하세요.");
+//			int month = result.nextInt();
+//			// System.out.printf("해당 달의 최대 일수는 %d일입니다", maxDays[month+1]);
+//			System.out.printf("%d월은 %d일까지 있습니다.\n", month, cal.getMaxDaysOfMonth(month));
+//
+//		}
 
 	}
 
